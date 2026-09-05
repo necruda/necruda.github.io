@@ -201,54 +201,83 @@ ul { list-style: none; }
 }
 .about-text strong { color: #00c9a7; }
 
-/* ===== PROJECT GRID — PLAYING CARDS ===== */
+/* ===== PROJECT GRID — DECK OF CARDS ===== */
 .project-grid {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 32px;
-  padding: 0 24px;
+  align-items: flex-end;
+  gap: 0;
+  padding: 40px 24px;
+  perspective: 1200px;
+  min-height: 480px;
 }
 
+/* Stack all cards on top of each other */
 .project-card {
   position: relative;
-  flex: 0 0 auto;
   width: 280px;
   background: #143a2a;
   border: 1px solid rgba(0, 201, 167, 0.2);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  opacity: 0.65;
-  transform: scale(0.9);
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+              opacity 0.35s ease,
+              box-shadow 0.45s ease;
+  transform-origin: bottom center;
+  will-change: transform;
 }
 
-.project-card:hover {
+/* Stack order — later cards on top */
+.project-card:nth-child(1) { z-index: 1; }
+.project-card:nth-child(2) { z-index: 2; }
+.project-card:nth-child(3) { z-index: 3; }
+.project-card:nth-child(4) { z-index: 4; }
+
+/* Slight offset in stacked state — show deck depth */
+.project-card:nth-child(1) { transform: translateY(24px) translateX(-6px); opacity: 0.5; }
+.project-card:nth-child(2) { transform: translateY(16px) translateX(-3px); opacity: 0.7; }
+.project-card:nth-child(3) { transform: translateY(8px); opacity: 0.85; }
+.project-card:nth-child(4) { transform: translateY(0); opacity: 1; }
+
+/* Hover on deck — fan cards out left-to-right */
+.project-grid:hover .project-card:nth-child(1) {
+  transform: translateX(-120px) translateY(40px) rotate(-6deg);
+  z-index: 1;
   opacity: 1;
-  transform: scale(1.04);
-  border-color: #00c9a7;
-  box-shadow: 0 24px 48px rgba(0, 201, 167, 0.22);
+  transition-delay: 0.05s;
+}
+.project-grid:hover .project-card:nth-child(2) {
+  transform: translateX(-50px) translateY(24px) rotate(-3deg);
   z-index: 2;
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+.project-grid:hover .project-card:nth-child(3) {
+  transform: translateX(8px) translateY(12px) rotate(1.5deg);
+  z-index: 3;
+  opacity: 1;
+  transition-delay: 0.15s;
+}
+.project-grid:hover .project-card:nth-child(4) {
+  transform: translateX(60px) translateY(0) rotate(4deg);
+  z-index: 4;
+  opacity: 1;
+  transition-delay: 0.2s;
 }
 
-.project-card:hover .project-image {
-  height: 340px;
-}
-
-/* Dim siblings when one is hovered */
-.project-card:hover ~ .project-card {
-  opacity: 0.3;
-  transform: scale(0.82);
+/* Card image grows with the fan */
+.project-grid:hover .project-card .project-image {
+  height: 260px;
 }
 
 .project-image {
-  height: 240px;
+  height: 220px;
   background-size: cover;
   background-position: center;
   background-color: #0b1f14;
   border-bottom: 1px solid rgba(0, 201, 167, 0.2);
-  transition: height 0.35s ease;
+  transition: height 0.45s ease;
 }
 
 .project-body { padding: 24px; transition: padding 0.35s ease; }
@@ -578,4 +607,25 @@ ul { list-style: none; }
 
   .modal-images { grid-template-columns: 1fr; }
   .modal-images img { height: 180px; }
+
+  /* Deck collapses to vertical stack on mobile */
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    gap: 24px;
+  }
+  .project-card {
+    width: 100%;
+    max-width: 360px;
+    transform: none !important;
+    opacity: 1 !important;
+    margin: 0;
+  }
+  .project-grid:hover .project-card {
+    transform: none !important;
+  }
+  .project-image {
+    height: 200px;
+  }
 }
