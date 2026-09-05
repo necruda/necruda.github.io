@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mechanical engineering portfolio — Rice University. Projects in PCB design, aerodynamics, robotics, and embedded systems.">
+  <meta property="og:title" content="Mechanical Engineering Portfolio">
+  <meta property="og:description" content="Rice ME junior. PCB design, CFD, robotics, and embedded systems projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://[your-github-username].github.io/">
+  <meta property="og:image" content="https://[your-github-username].github.io/images/hero-preview.jpg">
+  <title>[Your Name] — Mechanical Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">[YN]</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Mechanical Engineer · Rice University</p>
+      <h1 class="hero-title">Building <span class="accent">precision</span> into everything I make.</h1>
+      <p class="hero-sub">
+        Junior in Mechanical Engineering at Rice. I design, fabricate, and ship — from RF PCBs to Formula-style aerodynamics packages. Looking for a 2027 internship where I can push hardware to its limits.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Major Projects</span></div>
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Internships</span></div>
+      <div class="stat"><span class="stat-num">3.81</span><span class="stat-label">GPA</span></div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="headshot-wrapper">
+          <img src="images/headshot_placeholder.png" alt="[Your Photo]" class="headshot" onerror="this.parentElement.innerHTML='<div class=\'headshot-placeholder\'>Your Photo</div>'">
+        </div>
+        <div class="about-text-col">
+          <p class="about-text">
+            I'm a junior at <strong>Rice University</strong> studying Mechanical Engineering with a minor focus in
+            electrical systems and computational methods. My work sits at the intersection of mechanical design,
+            embedded electronics, and rapid prototyping — whether that's a custom 4-layer RF PCB for a rocket
+            transponder, an aerodynamics package for a formula-style race car, or an LLM-driven desktop robot.
+          </p>
+          <p class="about-text">
+            I've worked at Atec Inc. on aerospace throttle interface tooling and at TAMOS Inc. on UHV chambers
+            for quantum ion trapping systems. Outside of class, I lead aerodynamics for Rice FSAE and avionics
+            for ECLIPSE Rocketry.
+          </p>
+        </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section section-projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Click any project to dive deeper.</p>
+
+      <div class="project-grid">
+
+        <!-- DRUM MACHINE -->
+        <article class="project-card" data-project="drum">
+          <div class="project-image" style="background-image:url('images/drum_1.png')"></div>
+          <div class="project-body">
+            <span class="project-tag">Embedded Systems</span>
+            <h3>MINIDRUM 3000</h3>
+            <p>A pocket-sized drum machine and sequencer built around a PocketBeagle and a 2" OLED. Three-layer UI for recording, playback, and pattern management.</p>
+            <span class="project-link">View details →</span>
+          </div>
+        </article>
+
+        <!-- TRANSPONDER -->
+        <article class="project-card" data-project="transponder">
+          <div class="project-image" style="background-image:url('images/transponder_1.png')"></div>
+          <div class="project-body">
+            <span class="project-tag">PCB Design · RF</span>
+            <h3>ECLIPSE Rocket Transponder</h3>
+            <p>Custom 4-layer RF PCB for a 915 MHz rocket transponder. Integrates TI CC1200/CC1190 with a NEO-M9N GNSS module for in-flight tracking and recovery.</p>
+            <span class="project-link">View details →</span>
+          </div>
+        </article>
+
+        <!-- FSAE -->
+        <article class="project-card" data-project="fsae">
+          <div class="project-image" style="background-image:url('images/fsae_1.png')"></div>
+          <div class="project-body">
+            <span class="project-tag">CFD · Aerodynamics</span>
+            <h3>Rice FSAE Aerodynamics Package</h3>
+            <p>Founding aero lead. Authored the team's first Ansys Fluent SOP, ran 386k-cell half-symmetry CFD, and directed a full aerodynamic package through 3 design revisions.</p>
+            <span class="project-link">View details →</span>
+          </div>
+        </article>
+
+        <!-- DESKTOP ROBOT -->
+        <article class="project-card" data-project="robot">
+          <div class="project-image" style="background-image:url('images/robot_1.png')"></div>
+          <div class="project-body">
+            <span class="project-tag">Robotics · Mechatronics</span>
+            <h3>LLM Desktop Robot</h3>
+            <p>Object-oriented ROS2 control framework for an NVIDIA Jetson Orin Nano-based desktop robot. Routes LLM-driven autonomous actions to multi-DOF physical actuators.</p>
+            <span class="project-link">View details →</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Software &amp; CAD</h4>
+          <ul>
+            <li>SolidWorks · Onshape · Fusion 360</li>
+            <li>Ansys Fluent · MATLAB</li>
+            <li>Python · C++ · ROS2 · CUDA</li>
+            <li>KiCad · Fusion 360 PCB</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Fabrication</h4>
+          <ul>
+            <li>3D Printing · Milling · Laser Cutting</li>
+            <li>PCB Assembly &amp; Reflow</li>
+            <li>Multimeter · Oscilloscope · NanoVNA</li>
+            <li>Impedance Matching</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Engineering</h4>
+          <ul>
+            <li>DFM &amp; GD&amp;T (ASME Y14.5)</li>
+            <li>Design of Experiments (DoE)</li>
+            <li>CFD &amp; FEA</li>
+            <li>UHV / Vacuum Systems</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <ul>
+            <li>English — native</li>
+            <li>Spanish — native</li>
+            <li>German — professional (8 yrs)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-contact">
+    <div class="container">
+      <h2 class="section-title">Get in touch</h2>
+      <p class="contact-line">
+        I'm actively looking for 2027 mechanical engineering internships. Reach out for opportunities,
+        collaboration, or to talk shop about anything from CFD to RF PCB layout.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:[your.email@rice.edu]" class="btn btn-primary">Email Me</a>
+        <a href="https://github.com/[username]" target="_blank" class="btn btn-ghost">GitHub</a>
+        <a href="https://linkedin.com/in/[username]" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 [Your Name] · Built with HTML, CSS, and a lot of coffee.</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="projectModal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div class="modal-images" id="modalImages"></div>
+      <div class="modal-body">
+        <span class="project-tag" id="modalTag"></span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <ul class="modal-bullets" id="modalBullets"></ul>
+        <div class="modal-tech" id="modalTech"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
