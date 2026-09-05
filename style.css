@@ -435,6 +435,33 @@ ul { list-style: none; }
   font-weight: 500;
 }
 
+.modal-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #e8f5f1;
+  margin-bottom: 24px;
+}
+
+.modal-section {
+  margin-bottom: 20px;
+}
+
+.modal-section-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #00c9a7;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.modal-section p {
+  color: #b8d4cc;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* ===== RESUME PAGE ===== */
 .resume-header {
   max-width: 900px;
