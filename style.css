@@ -201,33 +201,58 @@ ul { list-style: none; }
 }
 .about-text strong { color: #00c9a7; }
 
-/* ===== PROJECT GRID ===== */
+/* ===== PROJECT GRID — PLAYING CARDS ===== */
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  padding: 0 24px;
 }
+
 .project-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 280px;
   background: #143a2a;
   border: 1px solid rgba(0, 201, 167, 0.2);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0.65;
+  transform: scale(0.9);
 }
+
 .project-card:hover {
-  transform: translateY(-6px);
+  opacity: 1;
+  transform: scale(1.04);
   border-color: #00c9a7;
-  box-shadow: 0 20px 40px rgba(0, 201, 167, 0.15);
+  box-shadow: 0 24px 48px rgba(0, 201, 167, 0.22);
+  z-index: 2;
 }
+
+.project-card:hover .project-image {
+  height: 340px;
+}
+
+/* Dim siblings when one is hovered */
+.project-card:hover ~ .project-card {
+  opacity: 0.3;
+  transform: scale(0.82);
+}
+
 .project-image {
   height: 240px;
   background-size: cover;
   background-position: center;
   background-color: #0b1f14;
   border-bottom: 1px solid rgba(0, 201, 167, 0.2);
+  transition: height 0.35s ease;
 }
-.project-body { padding: 24px; }
+
+.project-body { padding: 24px; transition: padding 0.35s ease; }
+
 .project-tag {
   display: inline-block;
   font-size: 11px;
@@ -332,6 +357,8 @@ ul { list-style: none; }
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+/* ===== MODAL ===== */
 .modal {
   position: fixed;
   inset: 0;
@@ -498,48 +525,57 @@ ul { list-style: none; }
   color: #00c9a7;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-bottom: 2px solid #00c9a7;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
-.resume-item { margin-bottom: 24px; }
-.resume-row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 6px;
+.resume-entry {
+  margin-bottom: 28px;
+}
+.resume-entry h3 {
+  font-size: 18px;
   color: #e8f5f1;
+  margin-bottom: 4px;
 }
-.resume-row strong { font-size: 16px; }
-.resume-row span { color: #8a9a93; font-size: 14px; }
-.resume-item p, .resume-section p {
-  color: #b8d4cc;
+.resume-entry .role {
+  color: #00c9a7;
   font-size: 14px;
+  font-weight: 500;
   margin-bottom: 8px;
 }
-.resume-item ul {
-  padding-left: 20px;
-  list-style: disc;
+.resume-entry .company {
+  color: #8a9a93;
+  font-size: 13px;
+  margin-bottom: 12px;
 }
-.resume-item li {
+.resume-entry ul {
+  padding-left: 20px;
   color: #b8d4cc;
   font-size: 14px;
   line-height: 1.7;
-  margin-bottom: 6px;
+}
+.resume-entry li {
+  margin-bottom: 4px;
+}
+.resume-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.resume-skills span {
+  background: #143a2a;
+  color: #00c9a7;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .nav-links { gap: 16px; }
-  .nav-links a:not(.nav-cta) { display: none; }
-  .hero-stats { gap: 32px; }
-  .stat-num { font-size: 32px; }
   .about-grid { grid-template-columns: 1fr; }
-  .project-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
-  .section { padding: 60px 0; }
+  .hero-stats { gap: 30px; }
   .section-title { font-size: 28px; }
+
   .modal-images { grid-template-columns: 1fr; }
   .modal-images img { height: 180px; }
 }
