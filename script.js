@@ -7,7 +7,7 @@ const projects = {
     process: 'Built the Splash Screen, File System, and Sequencer UI all from scratch using Python. Engineered the circuit with 3 capacitive touchpads, 3 dials, 3 buttons for real-time control and a 2" OLED screen for heightened interactivity. Documented all of the process between a Hackster profile and GitHub College-Projects Repo, including exactly how to wire the circuit and code it.',
     results: 'Produced a prototype DIY Mini Drum Machine that provides recording, playback, and saving functionality alongside basic sequencing features. Made a publicly accessible step-by-step DIY guide with a complete BOM to make it easy to replicate for all skill levels.',
     tech: ['PocketBeagle', 'Python', 'Circuitry', 'DIY Guide'],
-    images: ['images/drum_1.png', 'images/drum_machine_2.png', 'images/drum_2.png']
+    images: ['images/drum_1.png', 'images/drum_2.png', 'images/drum_3.png']
   },
   transponder: {
     title: 'ECLIPSE Rocket Transponder',
