@@ -3,7 +3,7 @@ const projects = {
   drum: {
     title: 'Mini Drum Machine',
     tag: 'Embedded Systems',
-    desc: 'Created a DIY mini drum machine and sequencer with custom UI for on-the-go finger drumming. Also paired with a complete DIY guide on Hackster.io: https://www.hackster.io/aa338/edes-301-mini-drum-b5fde8',
+    desc: 'Created a DIY mini drum machine and sequencer with custom UI for on-the-go finger drumming. Also paired with a complete DIY guide on <a href="https://www.hackster.io/aa338/edes-301-mini-drum-b5fde8" target="_blank" rel="noopener" style="color:#f5a623;text-decoration:underline;">Hackster.io</a>',
     process: 'Built the Splash Screen, File System, and Sequencer UI all from scratch using Python. Engineered the circuit with 3 capacitive touchpads, 3 dials, 3 buttons for real-time control and a 2" OLED screen for heightened interactivity. Documented all of the process between a Hackster profile and GitHub College-Projects Repo, including exactly how to wire the circuit and code it.',
     results: 'Produced a prototype DIY Mini Drum Machine that provides recording, playback, and saving functionality alongside basic sequencing features. Made a publicly accessible step-by-step DIY guide with a complete BOM to make it easy to replicate for all skill levels.',
     tech: ['PocketBeagle', 'Python', 'Circuitry', 'DIY Guide'],
@@ -58,7 +58,7 @@ function openProject(key) {
 
   modalTag.textContent = p.tag;
   modalTitle.textContent = p.title;
-  modalDesc.textContent = p.desc;
+  modalDesc.innerHTML = p.desc;
   modalProcess.textContent = p.process;
   modalResults.textContent = p.results;
   modalTech.innerHTML = p.tech.map(t => `<span>${t}</span>`).join('');
@@ -96,3 +96,51 @@ if (projectGrid) {
     card.addEventListener('mouseleave', () => { projectGrid.dataset.hover = ''; });
   });
 }
+
+// Image expansion: click an image in the modal to view it full-screen
+// `modal` is already declared above (line 42)
+const expandedOverlay = document.getElementById('expandedOverlay');
+
+function expandImage(img) {
+  if (!expandedOverlay) return;
+  const src = img.src;
+  expandedOverlay.querySelector('.expanded-img').src = src;
+  expandedOverlay.classList.add('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function collapseImage() {
+  if (!expandedOverlay) return;
+  expandedOverlay.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+// Wire up image clicks after modal content is populated
+document.addEventListener('click', e => {
+  const img = e.target.closest('.modal-images img');
+  if (img && modal.getAttribute('aria-hidden') === 'false') {
+    expandImage(img);
+  }
+});
+
+document.querySelectorAll('[data-close], .expanded-close').forEach(el => {
+  el.addEventListener('click', () => {
+    if (expandedOverlay && expandedOverlay.classList.contains('open')) {
+      collapseImage();
+    } else {
+      closeProject();
+    }
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (expandedOverlay && expandedOverlay.classList.contains('open')) {
+      collapseImage();
+    } else if (modal.getAttribute('aria-hidden') === 'false') {
+      closeProject();
+    }
+  }
+});

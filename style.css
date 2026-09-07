@@ -355,6 +355,53 @@ ul { list-style: none; }
   font-size: 13px;
   font-weight: 600;
 }
+/* ===== EXPANDED IMAGE OVERLAY (click modal image to zoom) ===== */
+#expandedOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(11, 31, 20, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+#expandedOverlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+#expandedOverlay .expanded-img {
+  max-width: 92vw;
+  max-height: 90vh;
+  object-fit: contain;
+  cursor: zoom-out;
+  border-radius: 8px;
+  transition: transform 0.15s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+#expandedOverlay .expanded-img:hover {
+  transform: scale(1.01);
+}
+#expandedOverlay .expanded-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #00c9a7;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 8px;
+  transition: color 0.15s, transform 0.15s;
+  z-index: 1001;
+}
+#expandedOverlay .expanded-close:hover {
+  color: #f5a623;
+  transform: rotate(90deg);
+}
 
 /* ===== SKILLS ===== */
 .skills-grid {
