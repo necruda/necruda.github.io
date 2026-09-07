@@ -219,7 +219,7 @@ ul { list-style: none; }
   position: relative;
   flex: 0 0 280px;
   width: 280px;
-  height: 420px;
+  height: 500px;
   background: #143a2a;
   border: 1px solid rgba(0, 201, 167, 0.2);
   border-radius: 14px;
@@ -241,7 +241,7 @@ ul { list-style: none; }
 
 /* Image area — fixed size for all cards */
 .project-card .project-image {
-  height: 220px;
+  height: 180px;
   background-size: cover;
   background-position: center;
   background-color: #0b1f14;
@@ -250,12 +250,12 @@ ul { list-style: none; }
 }
 
 .project-card .project-body {
-  padding: 20px 22px 22px;
+  padding: 14px 20px 16px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100% - 220px);
+  height: calc(100% - 180px);
 }
 
 /* Hovered card pops forward */
@@ -338,16 +338,16 @@ ul { list-style: none; }
   margin-bottom: 8px;
 }
 .project-body h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 19px;
+  margin-bottom: 6px;
   color: #e8f5f1;
   line-height: 1.3;
 }
 .project-body p {
   color: #b8d4cc;
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 14px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin-bottom: 10px;
   flex: 1;
 }
 .project-link {
@@ -495,7 +495,7 @@ ul { list-style: none; }
 }
 .modal-images img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
 }
 .modal-body { padding: 32px; }
