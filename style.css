@@ -460,16 +460,16 @@ ul { list-style: none; }
   justify-content: center;
 }
 .headshot {
-  width: 180px;
-  height: 180px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #00c9a7;
   background: #143a2a;
 }
 .headshot-placeholder {
-  width: 180px;
-  height: 180px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   background: #143a2a;
   border: 2px dashed #8a9a93;
