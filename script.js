@@ -32,7 +32,7 @@ const projects = {
     tag: 'Robotics · Mechatronics',
     desc: 'Working on creating a prototype for a desktop robot that can provide expression and novelty through visible motion when using LLMs.',
     process: 'Finalized a BOM for all electrical components needed to build the robot; the first prototype will only test electromechanical functionality. Currently learning C++ and CUDA to optimize GPU usage when enabling autonomous control over physical actuators. Architected the power distribution and bus communication systems for the robot.',
-    results: 'Still in beginning phases of project yet so results to come soon!',
+    results: 'Still in the beginning phases of the project, so results to come soon!',
     tech: ['NVIDIA Jetson Orin Nano', 'Python', 'ROS2', 'CUDA', 'LLM'],
     images: ['images/robot_1.png', 'images/robot_2.png', 'images/robot_3.png']
   }
