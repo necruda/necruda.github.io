@@ -557,18 +557,28 @@ ul { list-style: none; }
   line-height: 1.7;
   margin-bottom: 20px;
 }
-.modal-bullets li {
+.modal-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.modal-section li {
   color: #b8d4cc;
   font-size: 14px;
-  padding: 6px 0 6px 20px;
+  line-height: 1.65;
+  padding: 7px 0 7px 22px;
   position: relative;
+  margin-bottom: 4px;
 }
-.modal-bullets li::before {
+.modal-section li::before {
   content: "▸";
   position: absolute;
   left: 0;
   color: #00c9a7;
+  font-weight: 600;
 }
+/* existing .modal-bullets overrides kept for any legacy lists */
+.modal-bullets { margin: 0; padding: 0; list-style: none; }
 .modal-tech {
   display: flex;
   flex-wrap: wrap;

@@ -59,8 +59,17 @@ function openProject(key) {
   modalTag.textContent = p.tag;
   modalTitle.textContent = p.title;
   modalDesc.innerHTML = p.desc;
-  modalProcess.textContent = p.process;
-  modalResults.textContent = p.results;
+
+  // Split Process/Results into sentence bullets
+  const makeBullets = (text) => text.split('. ').filter(s => s.trim()).map(s => {
+    let cleaned = s.trim();
+    if (!cleaned.endsWith('.')) cleaned += '.';
+    return `<li>${cleaned}</li>`;
+  }).join('');
+
+  modalProcess.innerHTML = makeBullets(p.process);
+  modalResults.innerHTML = makeBullets(p.results);
+
   modalTech.innerHTML = p.tech.map(t => `<span>${t}</span>`).join('');
 
   modal.setAttribute('aria-hidden', 'false');
